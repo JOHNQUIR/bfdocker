@@ -24,9 +24,10 @@ $ sudo BES_VERSION=9.2.6.94 bash ./build.sh
 3. Run container in daemon mode, passing in the `ROOT_SERVER` environment variable set to name and port of the root server. The agent will start, download the masthead and register with the root server. You should see it appear in the console as a computer. For example:
 
 ```
-$ sudo docker run -d bfdocker/centos6 \
+$ sudo docker run -d  \
     -e "ROOT_SERVER=eval.mybigfix.com:52311" \
-    --hostname="no1.centos6.mybigfix.com"
+    --hostname="no1.centos6.mybigfix.com" \
+    bfdocker/centos6
 ```
 
 If a besserver is running in a container on the same host use the `--link`
